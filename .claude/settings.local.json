@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(ls docs/module-*.md)",
+      "Bash(npm audit)",
+      "Bash(findstr -i env)",
+      "Bash(dir *.env* *.secret* *.token*)",
+      "Bash(mkdir -p src/pages)",
+      "Bash(npm run start)"
+    ]
+  }
+}

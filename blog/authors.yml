@@ -1,3 +1,25 @@
+shumaila:
+  name: Shumaila Yousuf
+  title: AI & Robotics Student · Physical AI Book Author
+  url: https://github.com/shumailahassan
+  image_url: https://github.com/shumailahassan.png
+  page: true
+  socials:
+    github: shumailahassan
+    linkedin: shumaila-hassan-26406a2b5
+    email: shumailahassan1000@gmail.com
+
+book_author:
+  name: Physical AI & Humanoid Robotics Author
+  title: Robotics & AI Researcher
+  url: https://github.com
+  image_url: https://github.com/physical-ai-book.png
+  page: true
+  socials:
+    github: physical-ai-book
+    linkedin: physical-ai-humanoid-robotics
+    x: physical_ai_book
+
 yangshun:
   name: Yangshun Tay
   title: Ex-Meta Staff Engineer, Co-founder GreatFrontEnd
