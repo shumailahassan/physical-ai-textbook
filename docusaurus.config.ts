@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
-  tagline: 'A Comprehensive Textbook on Modern Robotics and AI Systems',
+  tagline: 'Learn Physical AI & Humanoid Robotics in a Hands-On Way',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -32,7 +32,17 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ur'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      ur: {
+        label: 'اردو',
+        direction: 'rtl',
+      },
+    },
   },
 
   presets: [
@@ -79,23 +89,31 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics',
       logo: {
-        alt: 'Physical AI & Humanoid Robotics Logo',
-        src: 'img/logo.svg',
+        alt: 'Physical AI & Humanoid Robotics Futuristic Robot Logo',
+        src: 'img/futuristic-robot-logo.svg',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Textbook',
+          label: 'Course Overview',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          type: 'search',
           position: 'right',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/facebook/docusaurus',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub Repository',
         },
       ],
     },
