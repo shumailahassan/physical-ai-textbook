@@ -10,6 +10,8 @@ image: /img/blog-about-author.jpg
 
 Welcome to the Physical AI & Humanoid Robotics textbook! I'm a passionate student and builder creating this comprehensive guide to modern humanoid robot systems.
 
+<!-- truncate -->
+
 ## My Journey
 
 As a student and builder in robotics and AI, I'm on a journey to understand and develop the next generation of intelligent robotic systems. My approach combines academic learning with hands-on building, focusing on the intersection of artificial intelligence and physical systems, particularly in the domain of humanoid robotics.
