@@ -208,12 +208,12 @@ h6 {
   color: var(--ifm-color-primary);
 }
 
-/* Modern navbar styling */
+/* Clean and simple navbar styling */
 .navbar {
-  box-shadow: var(--ifm-navbar-shadow);
-  background-color: var(--ifm-background-surface-color);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  padding: 0.5rem 0;
 }
 
 .navbar__inner {
@@ -222,9 +222,25 @@ h6 {
   padding: 0 1rem;
 }
 
-.navbar__title {
-  font-weight: 700;
-  color: var(--ifm-color-primary);
+.navbar__logo {
+  margin-right: 0;
+}
+
+.navbar__logo img {
+  height: 48px;
+  width: auto;
+}
+
+.navbar-sidebar__brand {
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Minimal header styling */
+.header-article {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 /* Dark mode navbar */

@@ -2,6 +2,39 @@
 
 This project implements a comprehensive textbook on Physical AI & Humanoid Robotics with a RAG (Retrieval Augmented Generation) system.
 
+## Development Server
+
+The development server is running at:
+- **URL**: http://localhost:3006
+- **Port**: 3006 (due to port availability)
+
+## Features
+
+### Language Support
+- **English (en)**: Default language
+- **Urdu (ur)**: Secondary language support
+- Language switcher available in the top navigation bar
+
+### Search Functionality
+- Local search powered by `@easyops-cn/docusaurus-search-local`
+- Search icon located in the top navigation bar
+- Indexes documentation, blog posts, and pages
+- Supports highlighting of search terms on target pages
+
+## Navigation
+
+- **Textbook Overview**: Main navigation for the textbook content
+- **Blog**: Additional articles and updates
+- **Language Dropdown**: Switch between English and Urdu
+- **Search Icon**: Global search across all content
+
+## Customizations
+
+- **Navbar**: Clean design with logo and minimal text
+- **Colors**: Modern indigo/blue theme (`#4f46e5`)
+- **Fonts**: Inter for body text, Fira Code for monospace
+- **Styling**: Custom CSS in `src/css/custom.css`
+
 ## Project Structure
 
 ```

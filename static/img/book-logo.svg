@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="48" viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .book-cover { fill: #c084fc; stroke: #7e22ce; stroke-width: 1.5; } /* Light purple cover with darker purple border */
+    .book-spine { fill: #a855f7; stroke: #7e22ce; stroke-width: 1.5; } /* Medium purple spine with darker purple border */
+    .book-page { fill: #e9d5ff; stroke: #7e22ce; stroke-width: 1; opacity: 0.7; } /* Light purple page with purple border */
+  </style>
+  <!-- Book cover -->
+  <path d="M15 10 L45 10 L45 38 L15 38 Z" class="book-cover"/>
+  <!-- Book spine -->
+  <path d="M10 10 L15 10 L15 38 L10 38 Z" class="book-spine"/>
+  <!-- Pages -->
+  <path d="M17 12 L43 12 L43 36 L17 36 Z" class="book-page"/>
+</svg>

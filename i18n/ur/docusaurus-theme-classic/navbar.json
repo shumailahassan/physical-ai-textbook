@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "فزیکل ای آئی اور ہیومنوائڈ روبوٹکس",
+    "description": "The homepage link in the navbar"
+  },
+  "logo.alt": {
+    "message": "فزیکل ای آئی ٹیکسٹ بک",
+    "description": "The alt text of the logo in the navbar"
+  }
+}

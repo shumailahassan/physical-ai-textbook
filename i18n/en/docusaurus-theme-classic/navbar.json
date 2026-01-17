@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "Physical AI & Humanoid Robotics",
+    "description": "The homepage link in the navbar"
+  },
+  "logo.alt": {
+    "message": "Physical AI Textbook",
+    "description": "The alt text of the logo in the navbar"
+  }
+}

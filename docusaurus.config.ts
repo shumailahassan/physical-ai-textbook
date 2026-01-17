@@ -80,6 +80,38 @@ const config: Config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // Use broader language support for mixed content
+        language: ["en"], // English works best for mixed content
+
+        hashed: true,
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+
+        // Enable indexing for all content types
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+
+        // Include all docs content in search
+        searchContextByPaths: ["docs", "blog"],
+
+        // Search bar settings
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
+
+        // Additional options for better search
+        removeDefaultStopWordFilter: false,
+      }),
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -89,16 +121,20 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
+      title: '',
+      hideOnScroll: false,
       logo: {
-        alt: 'Physical AI & Humanoid Robotics Futuristic Robot Logo',
-        src: 'img/futuristic-robot-logo.svg',
+        alt: 'Physical AI Textbook',
+        src: '/img/book-logo.svg',
+        width: 160,
+        height: 48,
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Course Overview',
+          label: 'Textbook Overview',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -166,6 +202,7 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
     },
+    algolia: undefined, // Disable Algolia search
     prism: {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.dracula,
