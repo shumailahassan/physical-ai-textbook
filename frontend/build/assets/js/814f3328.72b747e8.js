@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkphysical_ai_textbook=globalThis.webpackChunkphysical_ai_textbook||[]).push([[7472],{5513(t){t.exports=JSON.parse('{"title":"Recent Posts","items":[{"title":"About the Author","permalink":"/blog/2025/01/01/about-the-author","unlisted":false,"date":"2025-01-01T00:00:00.000Z"}]}')}}]);

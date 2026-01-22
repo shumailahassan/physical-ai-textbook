@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Physical AI &amp; Humanoid Robotics Blog</title>
+        <link>https://your-docusaurus-site.example.com/ur/blog</link>
+        <description>Physical AI &amp; Humanoid Robotics Blog</description>
+        <lastBuildDate>Wed, 01 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ur</language>
+        <item>
+            <title><![CDATA[About the Author]]></title>
+            <link>https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author</link>
+            <guid>https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author</guid>
+            <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Learn more about the student and builder behind the Physical AI & Humanoid Robotics textbook]]></description>
+            <content:encoded><![CDATA[<p>Welcome to the Physical AI &amp; Humanoid Robotics textbook! I'm a passionate student and builder creating this comprehensive guide to modern humanoid robot systems.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-journey">My Journey<a href="https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author#my-journey" class="hash-link" aria-label="Direct link to My Journey" title="Direct link to My Journey" translate="no">​</a></h2>
+<p>As a student and builder in robotics and AI, I'm on a journey to understand and develop the next generation of intelligent robotic systems. My approach combines academic learning with hands-on building, focusing on the intersection of artificial intelligence and physical systems, particularly in the domain of humanoid robotics.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="about-this-textbook">About This Textbook<a href="https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author#about-this-textbook" class="hash-link" aria-label="Direct link to About This Textbook" title="Direct link to About This Textbook" translate="no">​</a></h2>
+<p>This textbook represents my learning journey and practical experience in physical AI and humanoid robotics. It covers the complete pipeline from communication frameworks to AI perception, control systems, and multimodal integration.</p>
+<p>The book is organized into five interconnected modules that build upon each other:</p>
+<ul>
+<li class=""><strong>Module 1</strong>: The Robotic Nervous System (ROS2) - Communication and coordination framework</li>
+<li class=""><strong>Module 2</strong>: The Digital Twin (Gazebo &amp; Unity) - Simulation and virtual testing environments</li>
+<li class=""><strong>Module 3</strong>: The AI-Robot Brain (NVIDIA Isaac) - AI perception, control, and decision-making</li>
+<li class=""><strong>Module 4</strong>: Vision-Language-Action (VLA) Systems - Multimodal integration for advanced capabilities</li>
+<li class=""><strong>Module 5</strong>: Complete Humanoid Robot Integration - Bringing all modules together</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-student--builder-approach">My Student + Builder Approach<a href="https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author#my-student--builder-approach" class="hash-link" aria-label="Direct link to My Student + Builder Approach" title="Direct link to My Student + Builder Approach" translate="no">​</a></h2>
+<p>I believe in a hands-on, build-first approach to learning robotics and AI. Each module contains both theoretical concepts and practical implementations, allowing you to build real systems as you learn. My perspective combines the curiosity of a student with the determination of a builder.</p>
+<p>The textbook follows a spec-driven development approach, ensuring each component is well-defined before implementation. This methodology helps you understand not just how to build systems, but why certain architectural decisions are made.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="connect-with-me">Connect With Me<a href="https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author#connect-with-me" class="hash-link" aria-label="Direct link to Connect With Me" title="Direct link to Connect With Me" translate="no">​</a></h2>
+<p>You can follow my learning journey and connect with me on <a href="https://github.com/physical-ai-book" target="_blank" rel="noopener noreferrer" class="">GitHub</a> and <a href="https://linkedin.com/in/physical-ai-humanoid-robotics" target="_blank" rel="noopener noreferrer" class="">LinkedIn</a>.</p>
+<p>I'm always excited to hear feedback from fellow students and builders. If you have questions, suggestions, or want to discuss robotics and AI, feel free to reach out!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="latest-updates">Latest Updates<a href="https://your-docusaurus-site.example.com/ur/blog/2025/01/01/about-the-author#latest-updates" class="hash-link" aria-label="Direct link to Latest Updates" title="Direct link to Latest Updates" translate="no">​</a></h2>
+<p>Stay tuned for more blog posts where I'll share insights about the latest developments in humanoid robotics, AI research, and practical implementation tips that complement the textbook content.</p>]]></content:encoded>
+            <category>About</category>
+            <category>Author</category>
+            <category>Robotics</category>
+            <category>AI</category>
+            <category>Student</category>
+            <category>Builder</category>
+        </item>
+    </channel>
+</rss>
