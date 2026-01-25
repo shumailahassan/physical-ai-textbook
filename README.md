@@ -1,161 +1,158 @@
-# Physical AI & Humanoid Robotics Textbook
+# RAG-Based Chatbot Backend
 
-This project implements a comprehensive textbook on Physical AI & Humanoid Robotics with a RAG (Retrieval Augmented Generation) system.
-
-## Development Server
-
-The development server is running at:
-- **URL**: http://localhost:3006
-- **Port**: 3006 (due to port availability)
-
-## Features
-
-### Language Support
-- **English (en)**: Default language
-- **Urdu (ur)**: Secondary language support
-- Language switcher available in the top navigation bar
-
-### Search Functionality
-- Local search powered by `@easyops-cn/docusaurus-search-local`
-- Search icon located in the top navigation bar
-- Indexes documentation, blog posts, and pages
-- Supports highlighting of search terms on target pages
-
-## Navigation
-
-- **Textbook Overview**: Main navigation for the textbook content
-- **Blog**: Additional articles and updates
-- **Language Dropdown**: Switch between English and Urdu
-- **Search Icon**: Global search across all content
-
-## Customizations
-
-- **Navbar**: Clean design with logo and minimal text
-- **Colors**: Modern indigo/blue theme (`#4f46e5`)
-- **Fonts**: Inter for body text, Fira Code for monospace
-- **Styling**: Custom CSS in `src/css/custom.css`
+This is a complete backend for a RAG (Retrieval-Augmented Generation) based chatbot system that integrates OpenAI/Claude agents with vector database retrieval.
 
 ## Project Structure
 
 ```
-my-website/
-├── backend/                          # Backend services
-│   └── main.py                      # Single-file RAG ingestion pipeline (Spec-1)
-├── frontend/                         # Docusaurus frontend
-│   ├── src/                         # Source code
-│   ├── static/                      # Static assets
-│   ├── i18n/                        # Internationalization files
-│   ├── docusaurus.config.ts         # Docusaurus configuration
-│   ├── package.json                 # Frontend dependencies
-│   ├── sidebars.ts                  # Navigation sidebars
-│   └── tsconfig.json                # TypeScript configuration
-├── sp/specs/                         # Specification files
-│   ├── spec-1-rag-ingestion/        # RAG ingestion specifications
-│   └── spec-2-rag-retrieval/        # RAG retrieval specifications
-├── docs/                            # Textbook content
-├── build/                           # Built frontend files
-├── rag_pipeline/                    # Optional modular RAG implementation
-├── .env.example                     # Environment variables template
-└── README.md                        # This file
+physical-ai-textbook/
+├── spec3_backend/              # Core RAG functionality
+│   ├── agent_init.py           # OpenAI/Claude Agent initialization
+│   ├── retrieval_integration.py # Retrieval logic for vector database
+│   ├── query_handler.py        # Handles user queries and integrates Agent + Retrieval
+│   └── __init__.py
+├── spec4_backend/              # FastAPI application
+│   ├── api.py                  # FastAPI app, POST /query endpoint
+│   └── __init__.py
+├── .env                        # Environment variables (API keys, DB urls, etc.)
+└── requirements.txt            # Dependencies
 ```
 
-## Backend (RAG Pipeline)
+## Setup Instructions
 
-The backend contains the RAG ingestion pipeline:
-
-- `backend/main.py`: Single-file implementation of Spec-1 RAG ingestion pipeline
-- Processes textbook URLs, extracts content, generates embeddings with Cohere
-- Stores vectors in Qdrant with metadata (URL, title, section, chunk index)
-- Idempotent operation - re-running does not duplicate vectors
-
-## Frontend
-
-The frontend is built with Docusaurus and contains:
-
-- All textbook content in the `docs/` directory
-- Standard Docusaurus configuration and components
-- Internationalization support
-- Static assets
-
-## Specifications
-
-Specifications are organized under `sp/specs/`:
-
-- `spec-1-rag-ingestion/`: RAG ingestion specifications
-- `spec-2-rag-retrieval/`: RAG retrieval specifications
-
-## Setup
-
-1. Install dependencies:
-   ```bash
-   cd frontend
-   npm install
-   ```
-
-2. Configure environment variables:
-   ```bash
-   cp .env.example .env
-   # Edit .env with your API keys and configuration
-   ```
-
-3. Run the RAG ingestion pipeline:
-   ```bash
-   cd backend
-   python main.py
-   ```
-
-## Environment Variables
-
-Required environment variables:
-
-- `COHERE_API_KEY`: Cohere API key for embeddings
-- `QDRANT_URL`: URL to Qdrant instance
-- `QDRANT_API_KEY`: Qdrant API key (if using cloud)
-- `QDRANT_COLLECTION_NAME`: Name of the collection to store vectors
-- `TEXTBOOK_URLS`: Comma-separated list of textbook URLs to process
-
-## Optional Modular Implementation
-
-The `rag_pipeline/` directory contains an alternative modular implementation that can be used instead of the single-file approach in `backend/main.py`.
-
-## Original Docusaurus Information
-
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
-
-### Installation
+### 1. Install Dependencies
 
 ```bash
-yarn
+pip install -r requirements.txt
 ```
 
-### Local Development
+### 2. Configure Environment Variables
+
+Copy the `.env.example` (or use the existing `.env`) and fill in your API keys:
 
 ```bash
-yarn start
+# OpenAI API key (required for OpenAI agent)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Anthropic API key (optional, for Claude agent)
+CLAUDE_API_KEY=your_claude_api_key_here
+
+# Cohere API key (required for embeddings)
+COHERE_API_KEY=your_cohere_api_key_here
+
+# Qdrant vector database credentials
+QDRANT_URL=your_qdrant_url_here
+QDRANT_API_KEY=your_qdrant_api_key_here
+
+# Configuration parameters
+VECTOR_SIZE=384                 # Size of embedding vectors
+CHUNK_SIZE=500                  # Size of text chunks
+OVERLAP=50                      # Overlap between chunks
+MAX_PAGES=10                    # Maximum pages to process
+TEXTBOOK_URLS=https://example.com/textbook1,https://example.com/textbook2
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+### 3. Run the Application
 
-### Build
+Start the FastAPI server:
 
 ```bash
-yarn build
+cd physical-ai-textbook
+python -m uvicorn spec4_backend.api:app --reload
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+The API will be available at `http://localhost:8000`
 
-### Deployment
+## API Endpoints
 
-Using SSH:
+### POST /query
+Process user queries using the RAG agent.
+
+**Request Body:**
+```json
+{
+  "query": "Your question here"
+}
+```
+
+**Response:**
+```json
+{
+  "query": "Your question here",
+  "response": "Agent's response",
+  "timestamp": "2023-10-01T12:00:00.000Z"
+}
+```
+
+### GET /health
+Health check endpoint.
+
+**Response:**
+```json
+{
+  "status": "healthy",
+  "service": "RAG-Based Chatbot API",
+  "timestamp": "2023-10-01T12:00:00.000Z"
+}
+```
+
+## Testing the API
+
+After starting the server, you can test the API using curl:
 
 ```bash
-USE_SSH=true yarn deploy
+curl -X POST http://localhost:8000/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "What are the principles of artificial intelligence in robotics?"}'
 ```
 
-Not using SSH:
+Or using Python:
 
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:8000/query",
+    json={"query": "What are the principles of artificial intelligence in robotics?"}
+)
+
+print(response.json())
+```
+
+## Components
+
+### Agent Initialization (`spec3_backend/agent_init.py`)
+- Initializes OpenAI or Claude agents
+- Handles API key management
+- Provides testing functionality
+
+### Retrieval Integration (`spec3_backend/retrieval_integration.py`)
+- Integrates with Cohere for embeddings
+- Connects to Qdrant for vector storage
+- Implements similarity search
+
+### Query Handler (`spec3_backend/query_handler.py`)
+- Coordinates retrieval and generation
+- Formats context for the agent
+- Processes user queries using RAG methodology
+
+### FastAPI Application (`spec4_backend/api.py`)
+- Provides REST API endpoints
+- Handles request/response formatting
+- Implements health checks
+
+## Troubleshooting
+
+1. **API Keys**: Ensure all required API keys are set in the `.env` file
+2. **Dependencies**: Make sure all packages in `requirements.txt` are installed
+3. **Vector Database**: Ensure Qdrant is accessible if using real retrieval (mock data used otherwise)
+
+## Development
+
+To run tests:
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+# Run individual modules to test functionality
+python -m spec3_backend.agent_init
+python -m spec3_backend.retrieval_integration
+python -m spec3_backend.query_handler
 ```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

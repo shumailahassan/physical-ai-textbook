@@ -5,7 +5,9 @@ import ChatWidget from '../../components/ChatWidget/ChatWidget';
 export default function Layout(props) {
   return (
     <>
-      <OriginalLayout {...props} />
+      <OriginalLayout {...props}>
+        {props.children}
+      </OriginalLayout>
       <ChatWidget />
     </>
   );
